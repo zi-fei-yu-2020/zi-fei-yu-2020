@@ -1,0 +1,58 @@
+递归遍历树的数据元素
+
+/**
+ * 二叉树的先序遍历
+ * 利用递归遍历树
+ * 根 --> 左 ---> 右
+ */
+void preorder(Node* node)
+{
+    if (node != NULL)
+    {
+        print(node);
+        //递归实现
+        preorder(node->left);
+        preorder(node->right);
+    }
+}
+
+/**
+ * 中序遍历
+ *  左 ---> 根 ---> 右
+ */
+void inorder(Node* node)
+{
+   if (node != NULL)
+   {
+       inorder(node->left);
+       /*printf("%d\t", node->data);*/
+       print(node);
+       inorder(node->right);
+   }
+}
+
+/**
+ * 后序遍历
+ * 左 ---> 右 ---> 根
+ */
+ void postorder(Node* node)
+{
+     if (node != NULL)
+     {
+         postorder(node->left);
+         postorder(node->right);
+         /*printf("%d\t", node->data);*/
+         print(node);
+     }
+}
+
+
+void print(binarytree binarytree1)
+{
+    // 要遍历的链表的数据元素
+    printf("学生的id: %d   学生的性别: %c      ",
+           binarytree1->data.id, binarytree1->data.sex);
+}
+
+
+非递归遍历树的数据元素：
